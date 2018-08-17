@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+<title>FanturWeb</title>
+<meta name="viewport" content="width-device-width,initial-scale=1.0"/>
+
+</h:head>
+
+<body>
+
+	<h:form>
+		<p:fieldset legend="Ingresar Datos del nuevo Administrador">
+			<p:panelGrid columns="1">
+				
+				<p:outputLabel value="Precio del Paquete" />
+				<p:inputText value="#{paqueteCont.paquete.precio}"/>
+				<p:outputLabel value="Cantidad de Paquetes" />
+				<p:inputText value="#{paqueteCont.paquete.cantidad}"/>						
+		
+			</p:panelGrid>
+			</p:fieldset>
+				<h:form>
+	<p:fieldset>
+	<p:panelGrid columns="1">
+		<p:outputLabel value="Servicio" />
+		<p:inputText value="#{paqueteCont.servicio}" />
+		<p:outputLabel value="Noches" />
+		<p:inputText value="#{paqueteCont.noches}" />
+		<p:outputLabel	value="Precio" />
+		<p:inputText value="#{paqueteCont.precio}" />
+	</p:panelGrid>
+	</p:fieldset>
+	</h:form>
+			<p:commandButton value="Registrar" action="#{paqueteCont.continuar}" />		
+		
+		
+	</h:form>
+
+
+</body>
+</html>

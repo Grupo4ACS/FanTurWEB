@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence 
+    version="2.1" 
+    xmlns="http://xmlns.jcp.org/xml/ns/persistence" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+    
+    <persistence-unit name="pu1" transaction-type="JTA">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<jta-data-source>java:/jboss/datasources/FanTurDS</jta-data-source>
+		
+		
+		<class>grupo4.FanTurWEB.model.Servicio</class>
+		<class>grupo4.FanTurWEB.model.Admin</class>
+		<class>grupo4.FanTurWEB.model.Alojamiento</class>
+		<class>grupo4.FanTurWEB.model.Clase</class>
+		<class>grupo4.FanTurWEB.model.Cliente</class>
+		<class>grupo4.FanTurWEB.model.Contacto</class>
+		<class>grupo4.FanTurWEB.model.Evento</class>
+		<class>grupo4.FanTurWEB.model.Hotel</class>
+		<class>grupo4.FanTurWEB.model.Paquete</class>
+		<class>grupo4.FanTurWEB.model.Pasaje</class>
+		<class>grupo4.FanTurWEB.model.Reserva</class>
+		<class>grupo4.FanTurWEB.model.Ubicacion</class>
+		<class>grupo4.FanTurWEB.model.User</class>
+		
+		
+        
+        <properties>
+         	<!-- Properties for Hibernate -->
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+            <property name="hibernate.ejb.naming_strategy" value="org.hibernate.cfg.ImprovedNamingStrategy"/>
+            <property name="hibernate.connection.charSet" value="UTF-8"/>
+           <!-- property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/ -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+<!--             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" /> -->
+
+        </properties>
+    </persistence-unit>
+</persistence>

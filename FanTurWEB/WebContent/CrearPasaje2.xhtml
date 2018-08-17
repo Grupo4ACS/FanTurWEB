@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+<title>FanturWeb</title>
+<meta name="viewport" content="width-device-width,initial-scale=1.0"/>
+
+</h:head>
+
+<body>
+
+	<h:form>
+		<p:fieldset legend="Ingresar Datos de la ciudad de Partida">
+			<p:panelGrid columns="1">
+			
+				
+				<p:outputLabel value="Calle" />
+				<p:inputText value="#{pasajeCtrl.ubic.calle}" />
+				<p:outputLabel value="Altura" />
+				<p:inputText value="#{pasajeCtrl.ubic.altura}"/>
+				<p:outputLabel value="Localidad" />
+				<p:inputText value="#{pasajeCtrl.ubic.localidad}"/>
+				<p:outputLabel value="Provincia" />
+				<p:inputText value="#{pasajeCtrl.ubic.provincia}" />
+				<p:outputLabel value="Pais" />
+				<p:inputText value="#{pasajeCtrl.ubic.pais}"/>
+
+			</p:panelGrid>
+			
+		</p:fieldset>
+		
+		<br/>
+		
+		<p:fieldset legend="Ingresar Datos de la ciudad de Partida">
+			<p:panelGrid columns="1">
+			
+				
+				<p:outputLabel value="Calle" />
+				<p:inputText value="#{pasajeCtrl.ubic2.calle}" />
+				<p:outputLabel value="Altura" />
+				<p:inputText value="#{pasajeCtrl.ubic2.altura}"/>
+				<p:outputLabel value="Localidad" />
+				<p:inputText value="#{pasajeCtrl.ubic2.localidad}"/>
+				<p:outputLabel value="Provincia" />
+				<p:inputText value="#{pasajeCtrl.ubic2.provincia}" />
+				<p:outputLabel value="Pais" />
+				<p:inputText value="#{pasajeCtrl.ubic2.pais}"/>
+
+			</p:panelGrid>
+					
+		</p:fieldset>
+		
+	</h:form>
+
+	<h:form>
+		<p:commandButton value="Continuar" action="#{pasajeCtrl.continuar2}" />
+	</h:form>
+
+</body>
+</html>

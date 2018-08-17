@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head></h:head>
+<body>
+
+	<h1>Registrar Cliente</h1>
+
+	<p:link outcome="/index" value="Salir" />
+
+	<h:form>
+
+
+		<p:fieldset legend="Datos Personales">
+			<h:panelGrid>
+				<p:outputLabel value="Nombres: " />
+				<p:inputText value="#{clienteBean.cliente.nombre}" />
+				<br />
+				<p:outputLabel value="Apellido: " />
+				<p:inputText value="#{clienteBean.cliente.apellido}" />
+				<br />
+				<p:outputLabel value="Sexo: " />
+				<p:selectOneRadio>
+					<f:selectItem itemValue="M" itemLabel="Masculino" />
+					<f:selectItem itemValue="F" itemLabel="Femenino" />
+				</p:selectOneRadio>
+				<br />
+				<!-- Ni idea que onda -->
+				<p:outputLabel value="Fecha de nacimiento (dd//mm/aa): " />
+				<p:calendar value="#{clienteBean.cliente.nacimiento}" />
+			</h:panelGrid>
+		</p:fieldset>
+
+
+
+		<p:fieldset legend="Datos de la cuenta">
+			<h:panelGrid>
+				<p:outputLabel value="Usuario: " />
+				<p:inputText />
+				<br />
+				<p:outputLabel value="Contraseña: " />
+				<p:password id="clave1" match="clave2" feedback="true"
+					promptLabel="Ingrese la clave"
+					value="#{clienteBean.cliente.password}" />
+				<br />
+				<p:outputLabel value="Repetir contraseña: " />
+				<p:password id="clave2" />
+			</h:panelGrid>
+		</p:fieldset>
+
+
+
+
+		<p:fieldset legend="Datos de Contacto">
+			<h:panelGrid>
+				<p:outputLabel value="E-mail: " />
+				<p:inputText value="#{clienteBean.contacto.email}" />
+				<p:outputLabel value="Página: " />
+				<p:inputText value="#{clienteBean.contacto.pagina}" />
+				<p:outputLabel value="Código de país y área: " />
+				<p:inputText value="#{clienteBean.contacto.codPaisyArea}" />
+				<p:outputLabel value="Teléfono: " />
+				<p:inputText value="#{clienteBean.contacto.telefono}" />
+
+				<br />
+				<p:commandButton icon="ui-icon-check" value="Registrarse"
+					actionListener="#{clienteBean.registrar()}" />
+
+			</h:panelGrid>
+		</p:fieldset>
+
+
+
+	</h:form>
+
+</body>
+</html>

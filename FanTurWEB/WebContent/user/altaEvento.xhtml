@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+<title>FanturWeb</title>
+<meta name="viewport" content="width-device-width,initial-scale=1.0"/>
+
+</h:head>
+
+<body>
+
+	<h:form>
+		<p:fieldset legend="Ingresar Datos del nuevo Administrador">
+			<p:panelGrid columns="1">
+				<p:outputLabel value="Descripcion" />
+				<p:inputText value="#{eventoCtrl.modelObj.descripcion}"/>
+				<p:outputLabel value="Precio" />
+				<p:inputText value="#{eventoCtrl.modelObj.precio}"/>
+				<p:outputLabel value="Numero de Entrada" />
+				<p:inputText value="#{eventoCtrl.modelObj.nroEnt}"/>
+				<p:outputLabel value="Calle" />
+				<p:inputText value="#{eventoCtrl.ubicacion.calle}"/>
+				<p:outputLabel value="Altura" />
+				<p:inputText value="#{eventoCtrl.ubicacion.altura}"/>
+				<p:outputLabel value="Localidad" />
+				<p:inputText value="#{eventoCtrl.ubicacion.localidad}"/>
+				<p:outputLabel value="Provincia" />
+				<p:inputText value="#{eventoCtrl.ubicacion.provincia}"/>
+				<p:outputLabel value="Pais" />
+				<p:inputText value="#{eventoCtrl.ubicacion.pais}"/>
+				<p:outputLabel value="Fecha del Evento" />
+				<p:calendar value="#{eventoCtrl.modelObj.fecha}"/>
+								
+		
+			</p:panelGrid>
+			<p:commandButton value="Registrar" action="#{eventoCtrl.create}" />		
+		</p:fieldset>
+		
+	</h:form>
+
+
+</body>
+</html>

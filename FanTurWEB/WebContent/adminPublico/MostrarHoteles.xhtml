@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+<title>FanturWeb</title>
+<meta name="viewport" content="width-device-width,initial-scale=1.0"/>
+
+</h:head>
+<body>
+
+<h:form>
+<br/>
+<p:outputLabel value="#{paqueteCont.paquete.id}"/>
+	<p:outputLabel for="id" value="ingresarId"/>
+	<p:inputText id="id" value="#{paqueteCont.id}"/>
+	<p:commandButton value="buscar" actionListener="#{paqueteCont.buscar()}" update=":frm:tabla"/>
+</h:form>
+
+<h:form id="frm">
+	<p:dataTable id="tabla" var="hotel" value="#{paqueteCont.paquete.alojamiento.hoteles}">
+		<p:column headerText="nombre hotel">
+			<p:outputLabel value="#{hotel.nombre}"/>
+		</p:column>
+	</p:dataTable>
+</h:form>
+
+
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15290108053450" configfile="/FanTurWEB/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="122" y="178" id="pf15290109127821" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf15290109127842 pf15290111343207" path="/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="altaAdmin.xhtml" x="338" y="178" id="pf15290109127854" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf15290111343208" inlinks="pf15290109127842 pf15290111343207" path="/altaAdmin.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="exito.xhtml" id="pf15290111343209" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf15290111343208 pf152901113432110" path="/exito.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="eliminarAdmin.xhtml" id="pf152901113432111" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf152901113432110" path="/eliminarAdmin.xhtml"/>
+  <links id="pf15290109127842" target="pf15290109127854" source="pf15290109127821" outcome="crear"/>
+  <links id="pf15290111343207" target="pf15290109127854" source="pf15290109127821" outcome="eliminar"/>
+  <links id="pf15290111343208" target="pf15290111343209" source="pf15290109127854" outcome="succes"/>
+  <links id="pf152901113432110" target="pf15290111343209" source="pf152901113432111" outcome="succes"/>
+</pageflow:Pageflow>

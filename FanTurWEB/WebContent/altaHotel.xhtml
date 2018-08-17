@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+<title>FanturWeb</title>
+<meta name="viewport" content="width-device-width,initial-scale=1.0"/>
+
+</h:head>
+
+<body>
+
+	<h:form>
+		<p:fieldset legend="Ingresar Datos del nuevo Hotel">
+			<p:panelGrid columns="1">
+			
+				<p:outputLabel value="Nombre Hotel" />
+				<p:inputText value="#{hotelCtrl.modelObj.nombre}"/>
+				<p:outputLabel value="Email" />
+				<p:inputText value="#{hotelCtrl.contacto.email}"/>
+				<p:outputLabel value="Telefono" />
+				<p:inputText value="#{hotelCtrl.contacto.telefono}"/>
+				<p:outputLabel value="Calle" />
+				<p:inputText value="#{hotelCtrl.ubicacion.calle}" />
+				<p:outputLabel value="Altura" />
+				<p:inputText value="#{hotelCtrl.ubicacion.altura}"/>
+				<p:outputLabel value="Localidad" />
+				<p:inputText value="#{hotelCtrl.ubicacion.localidad}"/>
+				<p:outputLabel value="Provincia" />
+				<p:inputText value="#{hotelCtrl.ubicacion.provincia}" />
+				<p:outputLabel value="Pais" />
+				<p:inputText value="#{hotelCtrl.ubicacion.pais}"/>
+
+			</p:panelGrid>
+			<p:commandButton value="Registrar" action="#{hotelCtrl.create}" />		
+		</p:fieldset>
+		
+	</h:form>
+
+
+</body>
+</html>

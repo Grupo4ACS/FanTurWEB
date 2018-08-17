@@ -1,0 +1,551 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+
+
+        <meta name="viewport" content="width=device-width,initial-scale=1"/>
+        <link rel="icon" href="resources/images/favicon.png" type="image/x-icon"/>
+        	
+        <!-- Google Fonts -->	
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i%7CPlayfair+Display:400,400i,700,700i,900,900i" rel="stylesheet"/>
+        
+        <!-- Bootstrap Stylesheet -->	
+        <link rel="stylesheet" href="resources/css/bootstrap.min.css"/>
+        
+        <!-- Font Awesome Stylesheet -->
+        <link rel="stylesheet" href="resources/css/font-awesome.min.css"/>
+            
+        <!-- Custom Stylesheets -->	
+        <link rel="stylesheet" href="resources/css/style.css"/>
+        <link rel="stylesheet" id="cpswitch" href="resources/css/orange.css"/>
+        <link rel="stylesheet" href="resources/css/responsive.css"/>
+
+
+</h:head> 
+<body> 
+
+
+        <!--====== LOADER =====-->
+        <div class="loader"></div>
+        
+        
+	<!--============= TOP-BAR ===========-->
+	<div id="top-bar" class="tb-text-white">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+					<div id="info">
+						<ul class="list-unstyled list-inline">
+							<li><span><i class="fa fa-map-marker"></i></span>
+								Resistencia, Chaco, Argentina</li>
+							<li><span><i class="fa fa-phone"></i></span>+54 3794 587412</li>
+						</ul>
+					</div>
+					<!-- end info -->
+				</div>
+				<!-- end columns -->
+
+				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+					<div id="links">
+						<ul class="list-unstyled list-inline">
+						
+						
+						
+							<li>
+								
+								<p>Bienvenido #{loginBean.clienteResguardo.nombre}!</p>
+								</li>
+								
+								
+								<li>
+	                                <h:form>
+	                                	<h:commandLink action="#{loginBean.cerrarSesion()}" >
+	                                		<span><i class="fa fa-lock"></i></span>Logout
+	                                	</h:commandLink>
+	                                </h:form>
+										
+										
+							</li>
+						</ul>
+					</div>
+					<!-- end links -->
+				</div>
+				<!-- end columns -->
+			</div>
+			<!-- end row -->
+		</div>
+		<!-- end container -->
+	</div>
+	<!-- end top-bar -->
+
+	<nav
+		class="navbar navbar-default main-navbar navbar-custom navbar-white"
+		id="mynavbar-1">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" id="menu-button">
+				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			
+			<a href="#" class="navbar-brand"><span><i
+					class="fa fa-plane"></i>VIAJES</span> FANTUR</a>
+		</div>
+		<!-- end navbar-header -->
+
+		<div class="collapse navbar-collapse" id="myNavbar1">
+			<ul class="nav navbar-nav navbar-right navbar-search-link">
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown">Inicio<span><i
+							class="fa fa-angle-down"></i></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="index.xhtml">Pagina Principal</a></li>
+						
+					</ul></li>
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown">Paquetes<span><i
+							class="fa fa-angle-down"></i></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="flight-listing-right-sidebar.xhtml">Paquetes Disponibles</a></li>
+						
+					</ul></li>
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown">Hoteles<span><i
+							class="fa fa-angle-down"></i></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="hotel-listing-right-sidebar.xhtml">Hoteles Disponibles</a></li>
+						
+					</ul></li>
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown">Partidos<span><i
+							class="fa fa-angle-down"></i></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="tour-listing-right-sidebar.xhtml">Partidos Disponibles</a></li>
+					</ul></li>
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown">Cuenta<span><i
+							class="fa fa-angle-down"></i></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="user-profile.xhtml">Perfil</a></li>
+						<li><a href="verReservas.xhtml">Mis Reservas</a></li>
+					</ul></li>
+				<li></li>
+			</ul>
+		</div>
+		<!-- end navbar collapse -->
+	</div>
+	<!-- end container --> </nav>
+	<!-- end navbar -->
+
+	<div class="sidenav-content">
+		<div id="mySidenav" class="sidenav">
+			<h2 id="web-name">
+				<span><i class="fa fa-plane"></i></span>Viajes FanTur
+			</h2>
+
+			<div id="main-menu">
+				<div class="closebtn">
+					<button class="btn btn-default" id="closebtn">&times;</button>
+				</div>
+				<!-- end close-btn -->
+
+				<div class="list-group panel">
+
+					<a href="#home-links" class="list-group-item active"
+						data-toggle="collapse" data-parent="#main-menu"><span><i
+							class="fa fa-home link-icon"></i></span>Inicio<span><i
+							class="fa fa-chevron-down arrow"></i></span></a>
+					<div class="collapse sub-menu" id="home-links">
+						<a href="#" class="list-group-item active">Pagina Principal</a>
+					</div>
+					<!-- end sub-menu -->
+
+					<a href="#flights-links" class="list-group-item"
+						data-toggle="collapse" data-parent="#main-menu"><span><i
+							class="fa fa-plane link-icon"></i></span>Paquetes<span><i
+							class="fa fa-chevron-down arrow"></i></span></a>
+					<div class="collapse sub-menu" id="flights-links">
+					        <a href="flight-listing-right-sidebar.xhtml" class="list-group-item">Paquetes Disponibles</a>
+					</div>
+					<!-- end sub-menu -->
+
+					<a href="#hotels-links" class="list-group-item"
+						data-toggle="collapse" data-parent="#main-menu"><span><i
+							class="fa fa-building link-icon"></i></span>Hoteles<span><i
+							class="fa fa-chevron-down arrow"></i></span></a>
+					<div class="collapse sub-menu" id="hotels-links">
+						<a
+							href="hotel-listing-right-sidebar.xhtml" class="list-group-item">Hoteles Disponibles</a>
+					</div>
+					<!-- end sub-menu -->
+
+					<a href="#tours-links" class="list-group-item"
+						data-toggle="collapse" data-parent="#main-menu"><span><i
+							class="fa fa-globe link-icon"></i></span>Partidos<span><i
+							class="fa fa-chevron-down arrow"></i></span></a>
+					<div class="collapse sub-menu" id="tours-links">
+						<a
+							href="tour-listing-right-sidebar.xhtml" class="list-group-item">Partidos Disponibles</a> 
+					</div>
+					<!-- end sub-menu -->
+
+					<a href="#pages-links" class="list-group-item"
+						data-toggle="collapse" data-parent="#main-menu"><span><i
+							class="fa fa-clone link-icon"></i></span>Paginas<span><i
+							class="fa fa-chevron-down arrow"></i></span></a>
+					<div class="collapse sub-menu" id="pages-links">
+						<div class="list-group-heading list-group-item">
+							Información<span></span>
+						</div>
+						<a href="about-us.xhtml" class="list-group-item">Sobre Nosotros</a>
+						<div class="list-group-heading list-group-item">
+							Config. <span>Usuario</span>
+						</div>
+						<a href="dashboard.xhtml" class="list-group-item">Configuraciones</a> <a
+							href="user-profile.xhtml" class="list-group-item">Perfil de Usuario</a>
+						<a href="booking.xhtml" class="list-group-item">Reservas</a> <a
+							href="wishlist.xhtml" class="list-group-item">Lista de Deseos</a> <a
+							href="cards.xhtml" class="list-group-item">Tarjetas</a>
+						<div class="list-group-heading list-group-item">
+							Paginas <span>Especiales</span>
+						</div>
+						<a href="login.xhtml" class="list-group-item">Iniciar Sesión</a> <a
+							href="registration.xhtml" class="list-group-item">Registrarse</a>
+						<div class="list-group-heading list-group-item">
+							Paginas <span>Extras</span>
+						</div>
+						<a href="before-you-fly.xhtml" class="list-group-item">Paquete Económico</a> 
+                            <a href="travel-insurance.xhtml" class="list-group-item">Paquete Standard</a> 
+                            <a href="holidays.xhtml" class="list-group-item">Paquete Premiun</a>
+					</div>
+					<!-- end sub-menu -->
+				</div>
+				<!-- end list-group -->
+			</div>
+			<!-- end main-menu -->
+		</div>
+		<!-- end mySidenav -->
+	</div>
+	<!-- end sidenav-content -->
+
+
+	<!--========================= FLEX SLIDER =====================-->
+        
+        
+        <!--================= PAGE-COVER ================-->
+        <section class="page-cover" id="cover-thank-you">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                    	<h1 class="page-title">Thank You</h1>
+                        <ul class="breadcrumb">
+                            <li><a href="#">Home</a></li>
+                            <li class="active">Thank You</li>
+                        </ul>
+                    </div><!-- end columns -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </section><!-- end page-cover -->
+        
+        
+        <!--==== INNERPAGE-WRAPPER =====-->
+        <section class="innerpage-wrapper">
+        	<div id="thank-you" class="innerpage-section-padding">
+        		<div class="container">
+        			<div class="row">
+
+                    	<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 content-side">
+                        	<div class="space-right">
+                            	<div class="thank-you-note">
+                                   <h3>Your Booking is confirmed now. Thank You!</h3>
+                                   <p>Lorem ipsum dolor sit amet, conse adipiscing elit curabitur.</p>
+                                   <a href="#" class="btn btn-orange">Print Details</a>
+                               </div><!-- end thank-you-note -->
+                                                           
+                               <div class="traveler-info">
+                               		<h3 class="t-info-heading"><span><i class="fa fa-info-circle"></i></span>Traveler Information</h3>
+                               		<div class="table-responsive">
+                               			<table class="table">
+                                        	<tbody>
+                                        		<tr>
+                                                	<td>Booking Number:</td>
+                                                    <td>000-111-222</td>
+                                                </tr>
+                                                <tr>
+                                                	<td>First Name:</td>
+                                                    <td>James</td>
+                                                </tr>
+                                                <tr>
+                                                	<td>Last Name:</td>
+                                                    <td>Anderson</td>
+                                                </tr>
+                                                <tr>
+                                                	<td>Email Address:</td>
+                                                    <td>info@loremipsum.com</td>
+                                                </tr>
+                                                <tr>
+                                                	<td>Home Address:</td>
+                                                    <td>D-Block Main Road, Lorum Ipsum.</td>
+                                                </tr>
+                                                <tr>
+                                                	<td>Town/City:</td>
+                                                    <td>Paris/France</td>
+                                                </tr>
+                                                <tr>
+                                                	<td>Zip Code:</td>
+                                                    <td>700250</td>
+                                                </tr>
+                                                <tr>
+                                                	<td>Country:</td>
+                                                    <td>USA</td>
+                                                </tr>
+                                        	</tbody>
+                                        </table>
+                               		</div><!-- end table-responsive -->
+                                    
+                                    <div class="payment-method">
+                                        <h3 class="t-info-heading"><span><i class="fa fa-credit-card"></i></span>Payment</h3>
+                                        <p>Payment is made by the use of:</p>
+                                        <ul class="list-inline">
+                                        	<li><img src="resources/images/payment-1.png" class="img-responsive" alt="payment-img" /></li>
+                                            <li><img src="resources/images/payment-2.png" class="img-responsive" alt="payment-img" /></li>
+                                            <li  class="active"><img src="resources/images/payment-3.png" class="img-responsive" alt="payment-img" /></li>
+                                            <li><img src="resources/images/payment-4.png" class="img-responsive" alt="payment-img" /></li>
+                                    	</ul>
+                                    </div><!-- end payment-method -->
+                               </div><!-- end traveler-info -->
+                        	</div><!-- end space-right -->
+                        </div><!-- end columns -->
+						
+                        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 side-bar blog-sidebar right-side-bar">
+                      
+                            <div class="row">    
+
+                            	<div class="col-xs-12 col-sm-6 col-md-12">
+                                    <div class="side-bar-block recent-post">
+                                        <h2 class="side-bar-heading">Holiday Deals</h2>
+
+                                        <div class="recent-block">
+                                            <div class="recent-img">
+                                                <a href="blog-detail-left-sidebar.xhtml"><img src="resources/images/holiday-deal-1.jpg" class="img-reponsive" alt="holiday-deal-image" /></a>
+                                            </div><!-- end recent-img -->
+                                            
+                                            <div class="recent-text">
+                                                <a href="blog-detail-left-sidebar.xhtml"><h5>Jakarta Holidays</h5></a>
+                                                <span class="date">$200 Per Person</span>
+                                            </div><!-- end recent-text -->
+                                        </div><!-- end recent-block -->
+
+                                        <div class="recent-block">
+                                            <div class="recent-img">
+                                                <a href="blog-detail-left-sidebar.xhtml"><img src="resources/images/holiday-deal-2.jpg" class="img-reponsive" alt="holiday-deal-image" /></a>
+                                            </div><!-- end recent-img -->
+                                            
+                                            <div class="recent-text">
+                                                <a href="blog-detail-left-sidebar.xhtml"><h5>Prague Holidays</h5></a>
+                                                <span class="date">$343 Per Person</span>
+                                            </div><!-- end recent-text -->
+                                        </div><!-- end recent-block -->
+
+                                        <div class="recent-block">
+                                            <div class="recent-img">
+                                                <a href="blog-detail-left-sidebar.xhtml"><img src="resources/images/holiday-deal-3.jpg" class="img-reponsive" alt="holiday-deal-image" /></a>
+                                            </div><!-- end recent-img -->
+                                            
+                                            <div class="recent-text">
+                                                <a href="blog-detail-left-sidebar.xhtml"><h5>Africa Holidays</h5></a>
+                                                <span class="date">$150 Per Person</span>
+                                            </div><!-- end recent-text -->
+                                        </div><!-- end recent-block -->
+
+                                   </div><!-- end side-bar-block -->
+                                </div><!-- end columns -->
+                                
+                                <div class="col-xs-12 col-sm-6 col-md-12">
+                                    <div class="side-bar-block contact">
+                                        <h2 class="side-bar-heading">Contact Us</h2>
+                                        <div class="c-list">
+                                            <div class="icon"><span><i class="fa fa-envelope"></i></span></div>
+                                            <div class="text"><p>support@star-hotel.com</p></div>
+                                        </div><!-- end c-list -->
+                                        
+                                        <div class="c-list">
+                                            <div class="icon"><span><i class="fa fa-phone"></i></span></div>
+                                            <div class="text"><p>+222 – 5548 656</p></div>
+                                        </div><!-- end c-list -->
+                                        
+                                        <div class="c-list">
+                                            <div class="icon"><span><i class="fa fa-map-marker"></i></span></div>
+                                            <div class="text"><p>Street No: 1234/A, Blu Vard Area, Main Double Road, UK</p></div>
+                                        </div><!-- end c-list -->
+                                    </div><!-- end side-bar-block -->
+                                </div><!-- end columns -->
+                                
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="side-bar-block follow-us">
+                                        <h2 class="side-bar-heading">Follow Us</h2>
+                                        <ul class="list-unstyled list-inline">
+                                            <li><a href="#"><span><i class="fa fa-facebook"></i></span></a></li>
+                                            <li><a href="#"><span><i class="fa fa-twitter"></i></span></a></li>
+                                            <li><a href="#"><span><i class="fa fa-linkedin"></i></span></a></li>
+                                            <li><a href="#"><span><i class="fa fa-google-plus"></i></span></a></li>
+                                            <li><a href="#"><span><i class="fa fa-pinterest-p"></i></span></a></li>
+                                        </ul>
+                                    </div><!-- end side-bar-block -->
+								</div><!-- end columns -->
+                                
+							</div><!-- end row -->
+                        </div><!-- end columns -->
+                        
+                    </div><!-- end row -->
+        		</div><!-- end container -->
+        	</div><!-- end thank-you --> 
+        </section><!-- end innerpage-wrapper -->
+        
+        
+	<!--======================= MEJORES CARACTERISTICAS =====================-->
+	<section id="best-features" class="banner-padding black-features">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 col-md-3">
+				<div class="b-feature-block">
+					<span><i class="fa fa-dollar"></i></span>
+					<h3>El mejor Precio Garantizado</h3>
+					<p>Nuestros precios son los mejores del mercado, no tenemos competencia que nos alcance.</p>
+				</div>
+				<!-- end b-feature-block -->
+			</div>
+			<!-- end columns -->
+
+			<div class="col-sm-6 col-md-3">
+				<div class="b-feature-block">
+					<span><i class="fa fa-lock"></i></span>
+					<h3>Seguridad</h3>
+					<p>Los paquetes y servicios que ofrecemos son seguros y no tendra ningun problema.</p>
+				</div>
+				<!-- end b-feature-block -->
+			</div>
+			<!-- end columns -->
+
+			<div class="col-sm-6 col-md-3">
+				<div class="b-feature-block">
+					<span><i class="fa fa-thumbs-up"></i></span>
+					<h3>Los Mejores Agentes de Viajes</h3>
+					<p>Nuestra reputación nos coloca como líder en el mercado emergente de viajes.</p>
+				</div>
+				<!-- end b-feature-block -->
+			</div>
+			<!-- end columns -->
+
+			<div class="col-sm-6 col-md-3">
+				<div class="b-feature-block">
+					<span><i class="fa fa-bars"></i></span>
+					<h3>Guías Turísticos Excelentes</h3>
+					<p>Contamos con personal Profesional que se dedican 24/7 para ayudarlos cuando usted lo requiera.</p>
+				</div>
+				<!-- end b-feature-block -->
+			</div>
+			<!-- end columns -->
+		</div>
+		<!-- end row -->
+	</div>
+	<!-- end container --> </section>
+	<!-- end best-features -->
+
+	<!--======================= FOOTER =======================-->
+	<section id="footer" class="ftr-heading-o ftr-heading-mgn-1">
+
+	<div id="footer-top" class="banner-padding ftr-top-grey ftr-text-white">
+		<div class="container">
+			<div class="row">
+
+				<div
+					class="col-xs-12 col-sm-6 col-md-3 col-lg-3 footer-widget ftr-contact">
+					<h3 class="footer-heading">CONTÁCTENOS</h3>
+					<ul class="list-unstyled">
+						<li><span><i class="fa fa-map-marker"></i></span>Resistencia, Chaco, Argentina</li>
+						<li><span><i class="fa fa-phone"></i></span>+54 3794 587412</li>
+						<li><span><i class="fa fa-envelope"></i></span>ViajesFanTur@gmail.com</li>
+					</ul>
+				</div>
+				<!-- end columns -->
+
+				<div
+					class="col-xs-12 col-sm-6 col-md-2 col-lg-2 footer-widget ftr-links">
+					<h3 class="footer-heading">EMPRESA</h3>
+					<ul class="list-unstyled">
+						<li><a href="index.xhtml">Inicio</a></li>
+						<li><a href="flight-listing-right-sidebar.xhtml">Paquetes</a></li>
+						<li><a href="hotel-listing-right-sidebar.xhtml">Hoteles</a></li>
+						<li><a href="tour-listing-right-sidebar.xhtml">Partidos</a></li>
+					</ul>
+				</div>
+				<!-- end columns -->
+
+
+				<!-- end columns -->
+
+				<div
+					class="col-xs-12 col-sm-6 col-md-4 col-lg-4 footer-widget ftr-about">
+					<h3 class="footer-heading">SOBRE NOSOTROS</h3>
+					<p>Somos una empresa dedicada exclusivamente a la venta de paquetes de viajes al mundial de Rusia 2018, en el cual incluimos viajes, hoteles y entradas
+                        a los partidos de futbol de su seleccion preferida, no dude que somos los mejores en el rubro!.</p>
+					<ul class="social-links list-inline list-unstyled">
+						<li><a href="#"><span><i class="fa fa-facebook"></i></span></a></li>
+						<li><a href="#"><span><i class="fa fa-twitter"></i></span></a></li>
+						<li><a href="#"><span><i class="fa fa-google-plus"></i></span></a></li>
+						<li><a href="#"><span><i class="fa fa-pinterest-p"></i></span></a></li>
+						<li><a href="#"><span><i class="fa fa-instagram"></i></span></a></li>
+						<li><a href="#"><span><i class="fa fa-linkedin"></i></span></a></li>
+						<li><a href="#"><span><i
+									class="fa fa-youtube-play"></i></span></a></li>
+					</ul>
+				</div>
+				<!-- end columns -->
+
+			</div>
+			<!-- end row -->
+		</div>
+		<!-- end container -->
+	</div>
+	<!-- end footer-top -->
+
+	<div id="footer-bottom" class="ftr-bot-black">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="copyright">
+					<p>
+						© 2018 <a href="#">Vaijes FanTur</a>. Todos los Derechos Reservados.
+					</p>
+				</div>
+				<!-- end columns -->
+
+				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="terms">
+					<ul class="list-unstyled list-inline">
+						<li><a href="#">Términos y Condiciones</a></li>
+						<li><a href="#">Políticas de Privacidad</a></li>
+					</ul>
+				</div>
+				<!-- end columns -->
+			</div>
+			<!-- end row -->
+		</div>
+		<!-- end container -->
+	</div>
+	<!-- end footer-bottom --> </section>
+	<!-- end footer -->
+        
+        
+        <!-- Page Scripts Starts -->
+        <script src="resources/js/jquery.min.js"></script>
+        <script src="resources/js/bootstrap.min.js"></script>
+        <script src="resources/js/custom-navigation.js"></script>
+        <!-- Page Scripts Ends -->
+
+
+</body> 
+</html>

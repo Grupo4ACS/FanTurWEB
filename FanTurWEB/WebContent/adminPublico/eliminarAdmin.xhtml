@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+<title>FanturWeb</title>
+<meta name="viewport" content="width-device-width,initial-scale=1.0"/>
+
+</h:head>
+<body>
+	<h:form>
+	
+		<p:fieldset legend="Ingresar Id del Admin">
+		
+			<p:outputLabel value="Id" />
+			<p:inputText value="#{adminCtrl.id}" />
+			
+		</p:fieldset>
+		
+		<p:commandButton value="Borrar" action="#{adminCtrl.delete}" />
+	
+	</h:form>
+</body>
+</html>

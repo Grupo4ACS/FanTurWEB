@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+<title>FanturWeb</title>
+<meta name="viewport" content="width-device-width,initial-scale=1.0"/>
+
+</h:head>
+
+<body>
+
+	
+	<h:form id="frm1">
+	<p:dataTable id="tabla1" var="hotel" value="#{paqueteCont.hoteles}">
+		<p:column headerText="Nombre">
+			<p:outputLabel value="#{hotel.nombre}" />
+		</p:column>
+		<p:column headerText="Pais">
+			<p:outputLabel value="#{hotel.ubicacion.pais}" />
+		</p:column>
+		<p:column>
+			<p:commandButton value="Agregar" actionListener="#{paqueteCont.cargarHotel(hotel)}" update=":frm2:tabla2,:frm1:tabla1"/>
+		</p:column>
+		
+	</p:dataTable>
+	</h:form>	
+	
+	
+	<br/>
+	<h:form id="frm2">
+	<p:dataTable id="tabla2" var="hotel2" value="#{paqueteCont.hoteles2}" emptyMessage="no hay mas hoteles disponibles">		
+		<p:column headerText="Nombre">
+			<p:outputLabel value="#{hotel2.nombre}" />
+		</p:column>
+		<p:column headerText="Pais">
+			<p:outputLabel value="#{hotel2.ubicacion.pais}" />
+		</p:column>		
+	</p:dataTable>
+	</h:form>
+	<br/>
+	<h:form>	
+	<p:commandButton value="Continuar" action="#{paqueteCont.continuarCreacion}" />		
+	</h:form>
+
+</body>
+</html>

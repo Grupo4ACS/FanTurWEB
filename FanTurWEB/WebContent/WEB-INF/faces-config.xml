@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config
+
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+    version="2.2">
+
+
+
+<navigation-rule>
+	<from-view-id>/indexAdmin.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>crearAdmin</from-outcome>
+		<to-view-id>/altaAdmin.xhtml</to-view-id>
+	</navigation-case>
+	<navigation-case>
+		<from-outcome>eliminarAdmin</from-outcome>
+		<to-view-id>/eliminarAdmin.xhtml</to-view-id>
+	</navigation-case>
+	<navigation-case>
+		<from-outcome>crearHotel</from-outcome>
+		<to-view-id>/altaHotel.xhtml</to-view-id>
+	</navigation-case>
+	<navigation-case>
+		<from-outcome>crearEvento</from-outcome>
+		<to-view-id>/altaEvento.xhtml</to-view-id>
+	</navigation-case>
+	
+		<navigation-case>
+		<from-outcome>crearPaquete</from-outcome>
+		<to-view-id>/altaPaquete1.xhtml</to-view-id>
+	</navigation-case>
+	
+</navigation-rule>	
+
+
+<navigation-rule>
+<from-view-id>/altaAdmin.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>succes</from-outcome>
+		<to-view-id>/exito.xhtml</to-view-id>
+	</navigation-case>
+</navigation-rule>
+
+
+<navigation-rule>
+<from-view-id>/eliminarAdmin.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>succes</from-outcome>
+		<to-view-id>/exito.xhtml</to-view-id>
+	</navigation-case>
+</navigation-rule>
+
+<navigation-rule>
+<from-view-id>/altaHotel.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>succes</from-outcome>
+		<to-view-id>/exito.xhtml</to-view-id>
+	</navigation-case>
+</navigation-rule>
+
+<navigation-rule>
+<from-view-id>/altaEvento.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>succes</from-outcome>
+		<to-view-id>/exito.xhtml</to-view-id>
+	</navigation-case>
+</navigation-rule>
+
+<navigation-rule>
+<from-view-id>/altaPaquete1.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>seguir</from-outcome>
+		<to-view-id>/AltaPaquete2.xhtml</to-view-id>
+	</navigation-case>
+</navigation-rule>
+
+<navigation-rule>
+<from-view-id>/AltaPaquete2.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>continuar</from-outcome>
+		<to-view-id>/AltaPaquete3.xhtml</to-view-id>
+	</navigation-case>
+</navigation-rule>
+
+<navigation-rule>
+<from-view-id>/AltaPaquete3.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>terminar</from-outcome>
+		<to-view-id>/exito.xhtml</to-view-id>
+	</navigation-case>
+</navigation-rule>
+
+</faces-config>

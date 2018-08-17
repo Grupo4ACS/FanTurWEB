@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+<title>FanturWeb</title>
+<meta name="viewport" content="width-device-width,initial-scale=1.0"/>
+
+</h:head>
+<body>
+
+	<h:form>
+		<p:fieldset legend="Nuevo Pasaje">
+			<p:panelGrid columns="1">
+			<p:outputLabel value="tipo de vehiculo"/>
+			<p:inputText value="#{pasajeCtrl.tv}" />
+			<p:outputLabel for="FechaIda" value="Fecha de Ida"/>
+			<p:calendar id="FechaIda" value="#{pasajeCtrl.modelObj.ida}" />
+			<p:outputLabel for="FechaLlegada" value="Fecha de Ida Llegada"/>
+			<p:calendar id="FechaLlegada" value="#{pasajeCtrl.modelObj.idaLlegada}" />
+			<p:outputLabel for="idaLlegada" value="Fecha de partida Vuelta"/>
+			<p:calendar id="idaLlegada" value="#{pasajeCtrl.modelObj.vuelta}" />
+			<p:outputLabel for="LlegadaVuelta" value="Fecha LLegada Vuelta"/>
+			<p:calendar id="LlegadaVuelta" value="#{pasajeCtrl.modelObj.vueltaLlegada}" />			
+			<p:outputLabel for="Asiento" value="asiento"/>
+			<p:inputText id="Asiento" value="#{pasajeCtrl.modelObj.asiento}" />
+			<p:outputLabel for="Precio" value="Precio"/>
+			<p:inputText id="Precio" value="#{pasajeCtrl.modelObj.precio}" />
+			<br/>
+			<p:commandButton value="Continuar" action="#{pasajeCtrl.continuar}" />	
+			</p:panelGrid>		
+		</p:fieldset>
+	</h:form>
+	
+	
+	
+</body>
+</html>

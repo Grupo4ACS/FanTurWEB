@@ -1,0 +1,704 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<link rel="icon" href="resources/images/favicon.png" type="image/x-icon" />
+
+	<!-- Google Fonts -->
+	<link
+		href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i%7CMerriweather:300,300i,400,400i,700,700i,900,900i"
+		rel="stylesheet" />
+
+	<!-- Bootstrap Stylesheet -->
+	<link rel="stylesheet" href="resources/css/bootstrap.min.css" />
+
+	<!-- Font Awesome Stylesheet -->
+	<link rel="stylesheet" href="resources/css/font-awesome.min.css" />
+
+	<!-- Custom Stylesheets -->
+	<link rel="stylesheet" href="resources/css/style.css" />
+	<link rel="stylesheet" id="cpswitch" href="resources/css/orange.css" />
+	<link rel="stylesheet" href="resources/css/responsive.css" />
+
+	<!-- Owl Carousel Stylesheet -->
+	<link rel="stylesheet" href="resources/css/owl.carousel.css" />
+	<link rel="stylesheet" href="resources/css/owl.theme.css" />
+
+	<!-- Flex Slider Stylesheet -->
+	<link rel="stylesheet" href="resources/css/flexslider.css" type="text/css" />
+
+	<!--Date-Picker Stylesheet-->
+	<link rel="stylesheet" href="resources/css/datepicker.css" />
+
+	<!-- Magnific Gallery -->
+	<link rel="stylesheet" href="resources/css/magnific-popup.css" />
+
+</h:head>
+<body id="main-homepage">
+
+
+
+	<!--====== LOADER =====-->
+	<div class="loader"></div>
+
+
+	
+	<!--============= TOP-BAR ===========-->
+	<div id="top-bar" class="tb-text-white">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+					<div id="info">
+						<ul class="list-unstyled list-inline">
+							<li><span><i class="fa fa-map-marker"></i></span>
+								Resistencia, Chaco, Argentina</li>
+							<li><span><i class="fa fa-phone"></i></span>+54 3794 587412</li>
+						</ul>
+					</div>
+					<!-- end info -->
+				</div>
+				<!-- end columns -->
+
+				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+					<div id="links">
+						<ul class="list-unstyled list-inline">
+						
+						
+						
+							<li>
+								
+								<p>Bienvenido #{loginBean.clienteResguardo.nombre}!</p>
+								</li>
+								
+								
+								<li>
+	                                <h:form>
+	                                	<h:commandLink action="#{loginBean.cerrarSesion()}" >
+	                                		<span><i class="fa fa-lock"></i></span>Logout
+	                                	</h:commandLink>
+	                                </h:form>
+										
+										
+							</li>
+						</ul>
+					</div>
+					<!-- end links -->
+				</div>
+				<!-- end columns -->
+			</div>
+			<!-- end row -->
+		</div>
+		<!-- end container -->
+	</div>
+	<!-- end top-bar -->
+
+	<nav
+		class="navbar navbar-default main-navbar navbar-custom navbar-white"
+		id="mynavbar-1">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" id="menu-button">
+				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			
+			<a href="#" class="navbar-brand"><span><i
+					class="fa fa-plane"></i>VIAJES</span> FANTUR</a>
+		</div>
+		<!-- end navbar-header -->
+
+		<div class="collapse navbar-collapse" id="myNavbar1">
+			<ul class="nav navbar-nav navbar-right navbar-search-link">
+				<li class="dropdown active"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown">Inicio<span><i
+							class="fa fa-angle-down"></i></span></a>
+					<ul class="dropdown-menu">
+						<li class="active"><a href="#">Pagina Principal</a></li>
+						
+					</ul></li>
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown">Paquetes<span><i
+							class="fa fa-angle-down"></i></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="flight-listing-right-sidebar.xhtml">Paquetes Disponibles</a></li>
+						
+					</ul></li>
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown">Hoteles<span><i
+							class="fa fa-angle-down"></i></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="hotel-listing-right-sidebar.xhtml">Hoteles Disponibles</a></li>
+						
+					</ul></li>
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown">Partidos<span><i
+							class="fa fa-angle-down"></i></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="tour-listing-right-sidebar.xhtml">Partidos Disponibles</a></li>
+					</ul></li>
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown">Cuenta<span><i
+							class="fa fa-angle-down"></i></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="user-profile.xhtml">Perfil</a></li>
+						<li><a href="verReservas.xhtml">Mis Compras</a></li>
+					</ul></li>
+				<li></li>
+			</ul>
+		</div>
+		<!-- end navbar collapse -->
+	</div>
+	<!-- end container --> </nav>
+	<!-- end navbar -->
+
+	<div class="sidenav-content">
+		<div id="mySidenav" class="sidenav">
+			<h2 id="web-name">
+				<span><i class="fa fa-plane"></i></span>Viajes FanTur
+			</h2>
+
+			<div id="main-menu">
+				<div class="closebtn">
+					<button class="btn btn-default" id="closebtn">&times;</button>
+				</div>
+				<!-- end close-btn -->
+
+				<div class="list-group panel">
+
+					<a href="#home-links" class="list-group-item active"
+						data-toggle="collapse" data-parent="#main-menu"><span><i
+							class="fa fa-home link-icon"></i></span>Inicio<span><i
+							class="fa fa-chevron-down arrow"></i></span></a>
+					<div class="collapse sub-menu" id="home-links">
+						<a href="#" class="list-group-item active">Pagina Principal</a>
+					</div>
+					<!-- end sub-menu -->
+
+					<a href="#flights-links" class="list-group-item"
+						data-toggle="collapse" data-parent="#main-menu"><span><i
+							class="fa fa-plane link-icon"></i></span>Paquetes<span><i
+							class="fa fa-chevron-down arrow"></i></span></a>
+					<div class="collapse sub-menu" id="flights-links">
+					        <a href="flight-listing-right-sidebar.xhtml" class="list-group-item">Paquetes Disponibles</a>
+					</div>
+					<!-- end sub-menu -->
+
+					<a href="#hotels-links" class="list-group-item"
+						data-toggle="collapse" data-parent="#main-menu"><span><i
+							class="fa fa-building link-icon"></i></span>Hoteles<span><i
+							class="fa fa-chevron-down arrow"></i></span></a>
+					<div class="collapse sub-menu" id="hotels-links">
+						<a
+							href="hotel-listing-right-sidebar.xhtml" class="list-group-item">Hoteles Disponibles</a>
+					</div>
+					<!-- end sub-menu -->
+
+					<a href="#tours-links" class="list-group-item"
+						data-toggle="collapse" data-parent="#main-menu"><span><i
+							class="fa fa-globe link-icon"></i></span>Partidos<span><i
+							class="fa fa-chevron-down arrow"></i></span></a>
+					<div class="collapse sub-menu" id="tours-links">
+						<a
+							href="tour-listing-right-sidebar.xhtml" class="list-group-item">Partidos Disponibles</a> 
+					</div>
+					<!-- end sub-menu -->
+
+					<a href="#pages-links" class="list-group-item"
+						data-toggle="collapse" data-parent="#main-menu"><span><i
+							class="fa fa-clone link-icon"></i></span>Paginas<span><i
+							class="fa fa-chevron-down arrow"></i></span></a>
+					<div class="collapse sub-menu" id="pages-links">
+						<div class="list-group-heading list-group-item">
+							Información<span></span>
+						</div>
+						<a href="about-us.xhtml" class="list-group-item">Sobre Nosotros</a>
+						<div class="list-group-heading list-group-item">
+							Config. <span>Usuario</span>
+						</div>
+						<a href="dashboard.xhtml" class="list-group-item">Configuraciones</a> <a
+							href="user-profile.xhtml" class="list-group-item">Perfil de Usuario</a>
+						<a href="booking.xhtml" class="list-group-item">Reservas</a> <a
+							href="wishlist.xhtml" class="list-group-item">Lista de Deseos</a> <a
+							href="cards.xhtml" class="list-group-item">Tarjetas</a>
+						<div class="list-group-heading list-group-item">
+							Paginas <span>Especiales</span>
+						</div>
+						<a href="login.xhtml" class="list-group-item">Iniciar Sesión</a> <a
+							href="registration.xhtml" class="list-group-item">Registrarse</a>
+						<div class="list-group-heading list-group-item">
+							Paginas <span>Extras</span>
+						</div>
+						<a href="before-you-fly.xhtml" class="list-group-item">Paquete Económico</a> 
+                            <a href="travel-insurance.xhtml" class="list-group-item">Paquete Standard</a> 
+                            <a href="holidays.xhtml" class="list-group-item">Paquete Premiun</a>
+					</div>
+					<!-- end sub-menu -->
+				</div>
+				<!-- end list-group -->
+			</div>
+			<!-- end main-menu -->
+		</div>
+		<!-- end mySidenav -->
+	</div>
+	<!-- end sidenav-content -->
+
+
+	<!--========================= FLEX SLIDER =====================-->
+	<section class="flexslider-container" id="flexslider-container-1">
+
+	<div class="flexslider slider" id="slider-1">
+		<ul class="slides">
+
+			<li class="item-1"
+				style="background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(http://www.renetravel.com/images/pages/logo-2018-FIFA-World-Cup-Russia-banner-1650x580.png) 50% 0%; background-size: cover; height: 100%;">
+				<div class=" meta">
+					<div class="container">
+						<h2>Descubra</h2>
+						<h1>Rusia</h1>
+							
+						<a href="flight-listing-right-sidebar.xhtml" class="btn btn-default">¡Disfrute de los Mejores Paquetes de Viajes!</a>
+					</div>
+					<!-- end container -->
+				</div>
+				<!-- end meta -->
+			</li>
+			<!-- end item-1 -->
+
+			
+
+		</ul>
+	</div>
+	<!-- end slider -->
+
+ </section>
+	<!-- end flexslider-container -->
+
+
+	<!--=============== HOTEL OFFERS ===============-->
+	<section id="hotel-offers" class="section-padding">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="page-heading">
+					<h2>Hoteles Disponibles</h2>
+					<hr class="heading-line" />
+				</div>
+				<!-- end page-heading -->
+
+				
+				<div class="view-all text-center">
+				
+					<a href="hotel-listing-right-sidebar.xhtml" class="btn btn-orange">Ver Todos</a>
+				</div>
+				<!-- end view-all -->
+			</div>
+			<!-- end columns -->
+		</div>
+		<!-- end row -->
+	</div>
+	<!-- end container --> </section>
+	<!-- end hotel-offers -->
+
+
+	<!--======================= MEJORES CARACTERISTICAS =====================-->
+	<section id="best-features" class="banner-padding black-features">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 col-md-3">
+				<div class="b-feature-block">
+					<span><i class="fa fa-dollar"></i></span>
+					<h3>El mejor Precio Garantizado</h3>
+					<p>Nuestros precios son los mejores del mercado, no tenemos competencia que nos alcance.</p>
+				</div>
+				<!-- end b-feature-block -->
+			</div>
+			<!-- end columns -->
+
+			<div class="col-sm-6 col-md-3">
+				<div class="b-feature-block">
+					<span><i class="fa fa-lock"></i></span>
+					<h3>Seguridad</h3>
+					<p>Los paquetes y servicios que ofrecemos son seguros y no tendra ningun problema.</p>
+				</div>
+				<!-- end b-feature-block -->
+			</div>
+			<!-- end columns -->
+
+			<div class="col-sm-6 col-md-3">
+				<div class="b-feature-block">
+					<span><i class="fa fa-thumbs-up"></i></span>
+					<h3>Los Mejores Agentes de Viajes</h3>
+					<p>Nuestra reputación nos coloca como líder en el mercado emergente de viajes.</p>
+				</div>
+				<!-- end b-feature-block -->
+			</div>
+			<!-- end columns -->
+
+			<div class="col-sm-6 col-md-3">
+				<div class="b-feature-block">
+					<span><i class="fa fa-bars"></i></span>
+					<h3>Guías Turísticos Excelentes</h3>
+					<p>Contamos con personal Profesional que se dedican 24/7 para ayudarlos cuando usted lo requiera.</p>
+				</div>
+				<!-- end b-feature-block -->
+			</div>
+			<!-- end columns -->
+		</div>
+		<!-- end row -->
+	</div>
+	<!-- end container --> </section>
+	<!-- end best-features -->
+
+	<!--==================== VIDEO BANNER ===================-->
+	<section id="video-banner" class="banner-padding back-size">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h2>Tómese un Momento</h2>
+				<p>Con éste video pordrá entender cómo se sienten nuestros clientes durante su estadias en Rusia World Cup 2018.</p>
+
+				<a href="https://www.youtube.com/watch?v=yBLdQ1a4-JI"
+					class="popup-youtube" id="play-button"><span><i
+						class="fa fa-play"></i></span></a>
+			</div>
+			<!-- end columns -->
+		</div>
+		<!-- end row -->
+	</div>
+	<!-- end container --> </section>
+	<!-- end video-banner -->
+
+
+	<!--================= FLIGHT OFFERS =============-->
+	<section id="flight-offers" class="section-padding">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="page-heading">
+					<h2>Paquetes Disponibles</h2>
+					<hr class="heading-line" />
+				</div>
+				<!-- end page-heading -->
+
+
+				<div class="view-all text-center">
+					<a href="flight-listing-right-sidebar.xhtml" class="btn btn-orange">Ver Todos</a>
+				</div>
+				<!-- end view-all -->
+			</div>
+			<!-- end columns -->
+		</div>
+		<!-- end row -->
+	</div>
+	<!-- end container --> </section>
+	<!-- end flight-offers -->
+
+
+	<!--==================== HIGHLIGHTS ====================-->
+	<section id="highlights" class="section-padding back-size">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="row">
+					<div id="boxes">
+
+						<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+							<div class="highlight-box">
+								<div class="h-icon">
+									<span><i class="fa fa-plane"></i></span>
+								</div>
+								<!-- end h-icon -->
+
+								<div class="h-text">
+									<span class="numbers">24296</span>
+									<p>Viajes Vendidos</p>
+								</div>
+								<!-- end h-text -->
+							</div>
+							<!-- end highlight-box -->
+						</div>
+						<!-- end columns -->
+
+						<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+							<div class="highlight-box">
+								<div class="h-icon">
+									<span><i class="fa fa-ship"></i></span>
+								</div>
+								<!-- end h-icon -->
+
+								<div class="h-text cruise">
+									<span class="numbers">5006</span>
+									<p>Pelotas al agua</p>
+								</div>
+								<!-- end h-text -->
+							</div>
+							<!-- end highlight-box -->
+						</div>
+						<!-- end columns -->
+
+						<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+							<div class="highlight-box">
+								<div class="h-icon">
+									<span><i class="fa fa-taxi"></i></span>
+								</div>
+								<!-- end h-icon -->
+
+								<div class="h-text taxi">
+									<span class="numbers">22033</span>
+									<p>Ubers Disponibles</p>
+								</div>
+								<!-- end h-text -->
+							</div>
+							<!-- end highlight-box -->
+						</div>
+						<!-- end columns -->
+
+					</div>
+					<!-- end boxes -->
+				</div>
+				<!-- end row -->
+			</div>
+			<!-- end columns -->
+		</div>
+		<!-- end row -->
+	</div>
+	<!-- end container --> </section>
+	<!-- end highlights -->
+
+
+	<!--================ VEHICLE OFFERS ==============-->
+	<section id="vehicle-offers" class="section-padding">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="page-heading">
+					<h2>Partidos Disponibles</h2>
+					<hr class="heading-line" />
+				</div>
+				<!-- end page-heading -->
+
+				
+				<div class="view-all text-center">
+					<a href="tour-listing-right-sidebar.xhtml" class="btn btn-orange">Ver Todos</a>
+				</div>
+				<!-- end view-all -->
+			</div>
+			<!-- end columns -->
+		</div>
+		<!-- end row -->
+	</div>
+	<!-- end container --> </section>
+	<!-- end vehicle-offers -->
+
+
+	<!--==================== TESTIMONIALS ====================-->
+	<section id="testimonials" class="section-padding back-size">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="page-heading white-heading">
+					<h2>Experiencias de Viajes</h2>
+					<hr class="heading-line" />
+				</div>
+				<!-- end page-heading -->
+
+				<div class="carousel slide" data-ride="carousel" id="quote-carousel">
+					<div class="carousel-inner text-center">
+
+						<div class="item active">
+							<blockquote>El mejor viaje a una copa del mundo lo tuve con Viajes FanTur, super recomendables! Besitossss.</blockquote>
+							<div class="rating">
+								<span><i class="fa fa-star orange"></i></span> <span><i
+									class="fa fa-star orange"></i></span> <span><i
+									class="fa fa-star orange"></i></span> <span><i
+									class="fa fa-star orange"></i></span> <span><i
+									class="fa fa-star lightgrey"></i></span>
+							</div>
+							<!-- end rating -->
+							<small>Jeniffer Aguilar</small>
+						</div>
+						<!-- end item -->
+
+						<div class="item">
+							<blockquote>Desde que me subi al Uber para ir al Ezeiza me di cuenta que esta empresa era FANTASTICA! La volveria a elegir mil veces hasta que me salgan gratis los paquetes.</blockquote>
+							<div class="rating">
+								<span><i class="fa fa-star orange"></i></span> <span><i
+									class="fa fa-star orange"></i></span> <span><i
+									class="fa fa-star orange"></i></span> <span><i
+									class="fa fa-star orange"></i></span> <span><i
+									class="fa fa-star lightgrey"></i></span>
+							</div>
+							<!-- end rating -->
+
+							<small>Beto Casella</small>
+						</div>
+						<!-- end item -->
+
+						<div class="item">
+							<blockquote>Genial.</blockquote>
+							<div class="rating">
+								<span><i class="fa fa-star orange"></i></span> <span><i
+									class="fa fa-star orange"></i></span> <span><i
+									class="fa fa-star orange"></i></span> <span><i
+									class="fa fa-star orange"></i></span> <span><i
+									class="fa fa-star lightgrey"></i></span>
+							</div>
+							<!-- end rating -->
+
+							<small>Justin Bieber</small>
+						</div>
+						<!-- end item -->
+
+					</div>
+					<!-- end carousel-inner -->
+
+					<ol class="carousel-indicators">
+						<li data-target="#quote-carousel" data-slide-to="0" class="active"><img
+							src="resources/images/client-1.jpg" class="img-responsive" alt="client-img"/></li>
+						<li data-target="#quote-carousel" data-slide-to="1"><img
+							src="resources/images/client-2.jpg" class="img-responsive" alt="client-img"/></li>
+						<li data-target="#quote-carousel" data-slide-to="2"><img
+							src="resources/images/client-3.jpg" class="img-responsive" alt="client-img"/></li>
+					</ol>
+
+				</div>
+				<!-- end quote-carousel -->
+			</div>
+			<!-- end columns -->
+		</div>
+		<!-- end row -->
+	</div>
+	<!-- end container --> </section>
+	<!-- end testimonials -->
+
+
+	
+
+	<!--========================= NEWSLETTER-1 ==========================-->
+	<section id="newsletter-1" class="section-padding back-size newsletter">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+				<h2>Suscríbase a nuestro NewsLetter de Novedades</h2>
+				<p>Regístrese en nuestro sistema para recibir el mail de Novedades!</p>
+				<form>
+					<div class="form-group">
+						<a href="registration.xhtml" class="btn btn-orange">Regístrese!</a>
+					</div>
+				</form>
+			</div>
+			<!-- end columns -->
+		</div>
+		<!-- end row -->
+	</div>
+	<!-- end container --> </section>
+	
+	<!-- end newsletter-1 -->
+
+
+	<!--======================= FOOTER =======================-->
+	<section id="footer" class="ftr-heading-o ftr-heading-mgn-1">
+
+	<div id="footer-top" class="banner-padding ftr-top-grey ftr-text-white">
+		<div class="container">
+			<div class="row">
+
+				<div
+					class="col-xs-12 col-sm-6 col-md-3 col-lg-3 footer-widget ftr-contact">
+					<h3 class="footer-heading">CONTÁCTENOS</h3>
+					<ul class="list-unstyled">
+						<li><span><i class="fa fa-map-marker"></i></span>Resistencia, Chaco, Argentina</li>
+						<li><span><i class="fa fa-phone"></i></span>+54 3794 587412</li>
+						<li><span><i class="fa fa-envelope"></i></span>ViajesFanTur@gmail.com</li>
+					</ul>
+				</div>
+				<!-- end columns -->
+
+				<div
+					class="col-xs-12 col-sm-6 col-md-2 col-lg-2 footer-widget ftr-links">
+					<h3 class="footer-heading">EMPRESA</h3>
+					<ul class="list-unstyled">
+						<li><a href="index.xhtml">Inicio</a></li>
+						<li><a href="flight-listing-right-sidebar.xhtml">Paquetes</a></li>
+						<li><a href="hotel-listing-right-sidebar.xhtml">Hoteles</a></li>
+						<li><a href="tour-listing-right-sidebar.xhtml">Partidos</a></li>
+					</ul>
+				</div>
+				<!-- end columns -->
+
+
+				<!-- end columns -->
+
+				<div
+					class="col-xs-12 col-sm-6 col-md-4 col-lg-4 footer-widget ftr-about">
+					<h3 class="footer-heading">SOBRE NOSOTROS</h3>
+					<p>Somos una empresa dedicada exclusivamente a la venta de paquetes de viajes al mundial de Rusia 2018, en el cual incluimos viajes, hoteles y entradas
+                        a los partidos de futbol de su seleccion preferida, no dude que somos los mejores en el rubro!.</p>
+					<ul class="social-links list-inline list-unstyled">
+						<li><a href="#"><span><i class="fa fa-facebook"></i></span></a></li>
+						<li><a href="#"><span><i class="fa fa-twitter"></i></span></a></li>
+						<li><a href="#"><span><i class="fa fa-google-plus"></i></span></a></li>
+						<li><a href="#"><span><i class="fa fa-pinterest-p"></i></span></a></li>
+						<li><a href="#"><span><i class="fa fa-instagram"></i></span></a></li>
+						<li><a href="#"><span><i class="fa fa-linkedin"></i></span></a></li>
+						<li><a href="#"><span><i
+									class="fa fa-youtube-play"></i></span></a></li>
+					</ul>
+				</div>
+				<!-- end columns -->
+
+			</div>
+			<!-- end row -->
+		</div>
+		<!-- end container -->
+	</div>
+	<!-- end footer-top -->
+
+	<div id="footer-bottom" class="ftr-bot-black">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="copyright">
+					<p>
+						© 2018 <a href="#">Vaijes FanTur</a>. Todos los Derechos Reservados.
+					</p>
+				</div>
+				<!-- end columns -->
+
+				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="terms">
+					<ul class="list-unstyled list-inline">
+						<li><a href="#">Términos y Condiciones</a></li>
+						<li><a href="#">Políticas de Privacidad</a></li>
+					</ul>
+				</div>
+				<!-- end columns -->
+			</div>
+			<!-- end row -->
+		</div>
+		<!-- end container -->
+	</div>
+	<!-- end footer-bottom --> </section>
+	<!-- end footer -->
+
+
+	<!-- Page Scripts Starts -->
+	<script src="resources/js/jquery.min.js"></script>
+	<script src="resources/js/jquery.magnific-popup.min.js"></script>
+	<script src="resources/js/bootstrap.min.js"></script>
+	<script src="resources/js/jquery.flexslider.js"></script>
+	<script src="resources/js/bootstrap-datepicker.js"></script>
+	<script src="resources/js/owl.carousel.min.js"></script>
+	<script src="resources/js/custom-navigation.js"></script>
+	<script src="resources/js/custom-flex.js"></script>
+	<script src="resources/js/custom-owl.js"></script>
+	<script src="resources/js/custom-date-picker.js"></script>
+	<script src="resources/js/custom-video.js"></script>
+	<!-- Page Scripts Ends -->
+
+
+</body>
+</html>

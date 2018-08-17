@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+<title>FanturWeb</title>
+<meta name="viewport" content="width-device-width,initial-scale=1.0"/>
+
+</h:head>
+<body>
+	<h:form>
+		<p:fieldset legend="Ingresar Caracteristicas de la Clases de Servicio" >
+			<p:outputLabel value="Tipo de Clase"/>
+			<p:inputText value="#{claseCtrl.tipoClase}" />
+		</p:fieldset>
+		<br/>
+	</h:form>	
+	<h:form>
+		<p:commandButton value="agrega Servicio"  onclick="PF('wdialogo').show();"/>
+	</h:form>
+	<h:form id="frm">
+	<br/>
+		<p:dataTable id="tabla" var="serv" value="#{pasajeCtrl.clase.servicios}">
+			<p:column>
+				<p:outputLabel value="#{serv.detalle}"/>
+			</p:column>
+		</p:dataTable>
+	</h:form>
+	
+	<p:dialog id="dialogo" widgetVar="wdialogo" header="Agregar Servicio" modal="true" reasizable="false" closeOnEscape="true">
+		<h:form>
+			<p:panelGrid id="panel">
+				
+				<p:outputLabel for="descripcionServ" value="Nombre"/>
+				<p:inputText id="descripcionServ" value="#{pasajeCtrl.ts}" />
+				
+					
+				<p:commandButton value="Aceptar" update=":frm:tabla,dialogo" actionListener="#{pasajeCtrl.agregarServicio()}" oncomplete="PF('wdialogo').hide();"/>
+				<p:commandButton value="Cancelar" inmediate="true" onclick="PF('wdialogo').hide()" />
+				
+			</p:panelGrid>			
+		</h:form>		
+	</p:dialog>
+	<br/>
+	<h:form>
+	<p:commandButton value="Crear" action="#{pasajeCtrl.crearPasaje}" />
+	</h:form>
+</body>
+</html>

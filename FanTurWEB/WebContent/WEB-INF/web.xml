@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+
+	<servlet>
+		<servlet-name>Faces Servlet</servlet-name>
+		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>/faces/*</url-pattern>
+		<url-pattern>*.xhtml</url-pattern>
+		<url-pattern>*.jsf</url-pattern>
+		<url-pattern>*.faces</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>/index.xhtml</welcome-file>
+	</welcome-file-list>
+	<context-param>
+		<param-name>javax.faces.PROJECT_STAGE</param-name>
+		<param-value>Development</param-value>
+	</context-param>
+	<servlet-mapping>
+		<servlet-name>Resource Servlet</servlet-name>
+		<url-pattern>/primefaces_resource/*</url-pattern>
+	</servlet-mapping>
+
+
+
+
+	<!--Definimos security constraints para los roles disponibles -->
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>administrator</web-resource-name>
+			<url-pattern>/faces/admin/*</url-pattern>
+			<url-pattern>/admin/*</url-pattern>
+			<http-method>POST</http-method>
+			<http-method>GET</http-method>
+			<http-method>PUT</http-method>
+			<http-method>DELETE</http-method>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>ADMINISTRATOR</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>user</web-resource-name>
+			<url-pattern>/faces/user/*</url-pattern>
+			<url-pattern>/user/*</url-pattern>
+			<http-method>POST</http-method>
+			<http-method>GET</http-method>
+			<http-method>PUT</http-method>
+			<http-method>DELETE</http-method>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>ADMINISTRATOR</role-name>
+			<role-name>USER</role-name>
+		</auth-constraint>
+	</security-constraint>
+	<!--Definimos security constraints para los roles disponibles -->
+
+	<!--Definimos el tipo de mecanismo de autenticacion -->
+	<login-config>
+		<auth-method>FORM</auth-method>
+		<realm-name>school</realm-name>
+		<form-login-config>
+			<form-login-page>/loginJAAS.xhtml</form-login-page>
+			<form-error-page>/error-page.xhtml</form-error-page>
+		</form-login-config>
+	</login-config>
+	<!--Definimos el tipo de mecanismo de autenticacion -->
+
+	<!--Definimos los roles de seguridad -->
+	<security-role>
+		<role-name>ADMINISTRATOR</role-name>
+	</security-role>
+
+	<security-role>
+		<role-name>USER</role-name>
+	</security-role>
+	<!--Definimos los roles de seguridad -->
+
+
+</web-app>

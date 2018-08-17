@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" pageEncoding="UTF-8"/>
+
+        <title>Accesso en curso...</title>
+    </head>
+    <body onload="document.forms[0].submit()">
+        <form method="post" action="j_security_check">
+            <input type="hidden" name="j_username" value="${loginBean.usuario}" />
+            <input type="hidden" name="j_password" value="${loginBean.password}" />
+        </form>
+    </body>
+</html>
+

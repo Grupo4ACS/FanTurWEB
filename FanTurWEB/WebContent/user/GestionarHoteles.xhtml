@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+<title>FanturWeb</title>
+<meta name="viewport" content="width-device-width,initial-scale=1.0"/>
+
+</h:head>
+
+<body>
+	
+	<h:form id="frm2">
+			<p:selectOneMenu id="menu" value="#{hotelCtrl.idHotel}" filter="true" filterMatchMode="contains">
+				<f:selectItems value="#{hotelCtrl.hoteles1}" var="ht1" itemLabel="#{ht1.nombre}, #{ht1.apellido}" itemValue="#{ht1.id}" />
+			</p:selectOneMenu>	
+	<p:commandButton value="Buscar" actionListener="#{hotelCtrl.buscarHotel()}" update=":frm:datos"/>
+	</h:form>
+	
+	
+	<h:form id="frm">		
+			<p:dataTable id="datos" var="ht2" emptyMessage="nada para mostrar" value="#{hotelCtrl.hoteles2}">
+				<p:column headerText="Nombre">
+					<p:outputLabel value="#{ht2.nombre}" />
+				</p:column>
+				<p:column headerText="Pais">
+					<p:outputLabel value="#{ht2.ubicacion.pais}" />
+				</p:column>
+				<p:column>
+					<p:commandButton value="Modificar" actionListener="#{hotelCtrl.empezarGestion(ht2)}" onclick="PF('wdialogo2').show();" />
+				</p:column>
+				<p:column>
+					<p:commandButton value="Eliminar"  actionListener="#{hotelCtrl.empezarGestion(ht2)}" onclick="PF('wdialogo').show();" />
+				</p:column>
+				
+			</p:dataTable>
+	</h:form>	
+	
+	<p:dialog id="dialogo" widgetVar="wdialogo" header="Seguro que desea Eliminar el hotel?" modal="true" reasizable="false"  closeOnEscape="true">
+		<h:form>
+			<p:commandButton value="Aceptar" update="dialogo,:frm2:menu,:frm:datos" action="#{hotelCtrl.delete}" oncomplete="PF('wdialogo').hide();"/>
+			<p:commandButton value="Cancelar" inmediate="true" onclick="PF('wdialogo').hide();" />
+		</h:form>
+	</p:dialog>	
+	
+	<p:dialog id="dialogo2" widgetVar="wdialogo2" header="Modificar Hotel" modal="true" reasizable="false" closeOnEscape="true">
+		<h:form>
+			<p:panelGrid id="panel2">
+				<p:outputLabel for="descripcionHotel" value="Nombre"/>
+				<p:inputText id="descripcionHotel" value="#{hotelCtrl.modelObj.nombre}" />
+				
+				<p:outputLabel for="paisHotel" value="Pais"/>
+				<p:inputText id="paisHotel" value="#{hotelCtrl.ubicacion.pais}" />	
+				
+				<p:outputLabel for="telefonoHotel" value="Telefono"/>
+				<p:inputText id="telefonoHotel" value="#{hotelCtrl.contacto.telefono}" />	
+																				
+				<p:commandButton value="Aceptar" update=":frm2:menu,dialogo2,:frm:datos" action="#{hotelCtrl.update}" oncomplete="PF('wdialogo2').hide();"/>
+				<p:commandButton value="Cancelar" inmediate="true" onclick="PF('wdialogo2').hide()" />
+				
+			</p:panelGrid>			
+		</h:form>		
+	</p:dialog>
+	
+</body>
+</html>
